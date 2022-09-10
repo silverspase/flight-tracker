@@ -59,3 +59,8 @@ Linter's configuration is located in `.golangci.yml`.
 ### Env variables
 You can set your log leve and port(don't forget to change docker run command as well) as environment variables and service will use them.
 
+### Github actions
+Pipeline include next steps:
+1. Linter
+2. Unit tests
+3. Integration tests(depends on Linter and Unit tests)
