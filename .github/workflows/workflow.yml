@@ -27,14 +27,17 @@ jobs:
          with:
            go-version: 1.18
        - name: Run Unit Tests
-         run: test-unit
+         run: make test-unit
   integration-test:
     name: Integration Test
     runs-on: ubuntu-latest
+    needs:
+      - linter
+      - unit-test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
         with:
           go-version: 1.18
       - name: Run Integration Tests
-        run: test-integration
+        run: make test-integration
